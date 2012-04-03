@@ -1,0 +1,38 @@
+*********************************************
+Dilmaj Persian Dictionary version 0.5 - INSTALL
+*********************************************
+
+Dilmaj is a small and fast English-to-Persian dictionary for GNU/Linux console.
+
+The idea is very simple. You type dilmaj [WORD] and the program returns the meaning in ASCII art form.
+
+As many terminal emulators have still difficulties displaying right-to-left Persian text, this provides a quick, save and dirty way for looking words up in the command-line.
+
+Dilmaj 0.5 (April 1, 2012 - 13 Farvardin 1391)
+
+AUTHOUR: Farid Ahmadian 
+EMAIL: pesarkhobeee@gmail.com
+
+
+
+ACKNOWLEDGEMENTS:
+
+Many thanks to Omid Mottaghi as I used his logvis library in Dilmaj.
+https://developer.berlios.de/projects/persian-log2vis/
+
+
+REQUIREMENTS
+============
+sudo apt-get install php5-cli
+sudo apt-get install php5-gd
+
+INSTALLATION
+============
+chmod +x INSTALL.sh
+./INSTALL.sh
+
+Usage
+============
+./dilmaj WORD
+or
+./dilmaj WORD a (to display all equivalents )

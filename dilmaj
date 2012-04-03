@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+php /usr/lib/dilmaj/dilmaj.php $1 $2
