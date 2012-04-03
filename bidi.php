@@ -130,7 +130,7 @@
 		public function utf8Bidi($ta, $forcertl=false) {
 			global $unicode, $unicode_mirror, $unicode_arlet, $laa_array, $diacritics;
 			
-			require_once('/usr/lib/dilmaj/unicode_data.php');
+			include_once('unicode_data.php');
 			
 			// paragraph embedding level
 			$pel = 0;

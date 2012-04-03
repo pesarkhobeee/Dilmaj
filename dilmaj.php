@@ -1,5 +1,32 @@
 <?php
+/*
+ * Dilmaj Persian Dictionary version 0.5
+ * 
+ * Copyright 2012  Farid Ahmadian <http://farid.zanjanlug.org>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ * 
+ * 
+ */
+
+?>
+<?php
 require_once('persian_log2vis.php');
+$lib='./';
+
 
 //Check Secound Argument For Display All Reasualt or Just One
 if(isset($argv[2]) && $argv[2]=="a")
@@ -7,15 +34,19 @@ if(isset($argv[2]) && $argv[2]=="a")
 else
 	$mode="single";
 
+if(!isset($argv[1]))
+	die("You Enter An Empty Input!\n");
+	
 //Retriv source word
 $input = $argv[1];
 
 //$input = readline("Enter a word for traslate: ");
 if($input=="")
-	die("You Enter An Empty Input!");
+	die("You Enter An Empty Input!\n");
+
 
 //search data base for translation
-$db="/usr/share/dilmaj/generic.xdb";
+$db=$lib."generic.xdb";
 $xml = simplexml_load_file($db);
 $text="";
 if (count($xml->word) > 0) {
@@ -26,7 +57,7 @@ if (count($xml->word) > 0) {
 
 	}
 	if($text=="")
-		die("There Is Not Resualt Found!");
+		die("There Is Not Resualt Found!\n");
 }
 
 //explode result string to an array and filter long result from array
@@ -60,7 +91,7 @@ foreach($text as $item){
     
 
     // Replace path by your own font path
-	$font = '/usr/share/dilmaj/DejaVuSans.ttf';
+	$font = $lib.'DejaVuSans.ttf';
 
 	// Add the text
 	//imagettftext ( resource $image , float $size , float $angle , int $x , int $y , int $color , string $fontfile , string $text )
